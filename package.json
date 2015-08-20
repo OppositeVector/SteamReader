@@ -1,0 +1,14 @@
+{
+  "name": "steamreader",
+  "version": "1.0.0",
+  "description": "Simple access to the steam api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Victor Belski",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
