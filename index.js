@@ -9,27 +9,19 @@ var baseUrl = "api.steampowered.com";
 
 app.get("/", function(req, res) {
 
-	var options = {
-        host: baseUrl,
-        port: 80,
-        path: '/ISteamWebAPIUtil/GetSupportedAPIList',
-        method: 'GET',
-        headers: {
-            accept: 'application/json'
-        }
-    };
-
+	var fullData = "";
 	console.log("Start");
-	var x = http.request(options,function(res){
-	    console.log("Connected");
-	    res.on('data',function(data){
-	        console.log(data);
-	        SendJsonified(data);
+	var x = http.get("http://" + baseUrl + "/ISteamWebAPIUtil/GetSupportedAPIList/V0001?key=" + key,function(innerRes){
+	    console.log('STATUS: ' + innerRes.statusCode);
+  		console.log('HEADERS: ' + JSON.stringify(innerRes.headers));
+	    innerRes.on('data',function(data){
+	        fullData += data;
 	    });
-	    res.on('error', function(err) {
-	    	console.log(err);
-	    })
-
+	    innerRes.on("end", function() {
+	    	SendJsonified(fullData, res);
+	    });
+	}).on("error", function(err) {
+		console.log(err);
 	});
 
 });
