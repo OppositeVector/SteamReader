@@ -26,6 +26,9 @@ app.get("/", function(req, res) {
 	        console.log(data);
 	        SendJsonified(data);
 	    });
+	    res.on('error', function(err) {
+	    	console.log(err);
+	    })
 
 	});
 
