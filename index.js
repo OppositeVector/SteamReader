@@ -12,7 +12,7 @@ app.get("/", function(req, res) {
 	var options = {
         host: baseUrl,
         port: 80,
-        path: '/ISteamNews/GetNewsForApp/v0002/?appid=440&count=3&maxlength=300&format=json',
+        path: 'ISteamWebAPIUtil/GetSupportedAPIList?key=' + key,
         method: 'GET',
         headers: {
             accept: 'application/json'
