@@ -3,7 +3,7 @@ var express = require("express");
 var app = express();
 
 var port = process.env.PORT || 3000;
-var key = process.end.STEAM_API_KEY;
+var key = process.env.STEAM_API_KEY;
 var baseUrl = "api.steampowered.com";
 
 app.get("/", function(req, res) {
