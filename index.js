@@ -12,7 +12,7 @@ app.get("/", function(req, res) {
 	var options = {
         host: baseUrl,
         port: 80,
-        path: 'ISteamWebAPIUtil/GetSupportedAPIList?key=' + key,
+        path: 'ISteamWebAPIUtil/GetSupportedAPIList',
         method: 'GET',
         headers: {
             accept: 'application/json'
